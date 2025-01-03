@@ -19,10 +19,14 @@ export default {
     password: String,
     labelArray: Array,
   },
+  mounted() {
+    this.entropyCalculationProcess();
+  },
   watch: {
     password: {
       handler(password) {
         this.entropyCalculationProcess();
+        console.log(password, password.length, this.labelArray, charPool);
       },
     },
   },
@@ -31,9 +35,9 @@ export default {
       passwordStrength: "",
       safetyLevel: 0,
       safetyValues: [
-        { max: 20, label: "sehr unsicher", class: "text-[#ff0000]" },
-        { max: 40, label: "unsicher", class: "text-[#ff0000] " },
-        { max: 60, label: "akzeptabel", class: "text-[#ff6300]" },
+        { max: 40, label: "sehr unsicher", class: "text-[#ff0000]" },
+        { max: 50, label: "akzeptabel", class: "text-[#ff6300]" },
+        { max: 60, label: "fast sicher", class: "text-[#ff6300]" },
         { max: 80, label: "sicher", class: "text-[#ff6300]" },
         { max: 100, label: "sehr sicher", class: "text-[#3DC000]" },
         { max: 120, label: "besonders sicher", class: "text-[#3DC000]" },
@@ -52,6 +56,7 @@ export default {
       this.updateCharacterPoolCount();
       this.calculateEntropy();
       this.setSafetyLevel();
+      console.log(entropy, charPool);
     },
     resetVariables() {
       charPool = 0;
