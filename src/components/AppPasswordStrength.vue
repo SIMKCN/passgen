@@ -56,7 +56,9 @@ export default {
       this.updateCharacterPoolCount();
       this.calculateEntropy();
       this.setSafetyLevel();
+
       console.log(entropy, charPool);
+      this.resetVariables();
     },
     resetVariables() {
       charPool = 0;
