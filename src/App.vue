@@ -2,7 +2,6 @@
 import BaseButton from "@/components/BaseButton.vue";
 
 import BaseLabel from "@/components/BaseLabel.vue";
-import AppLength from "@/components/AppPasswordLengthInput.vue";
 import BaseMessage from "@/components/BaseMessage.vue";
 import AppPasswordStrength from "./components/AppPasswordStrength.vue";
 import AppCharacterSelector from "@/components/AppCharacterSelector.vue";
