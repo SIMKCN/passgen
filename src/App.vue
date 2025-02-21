@@ -127,6 +127,9 @@ export default {
     BaseMessage,
     AppPasswordStrength,
   },
+  mounted() {
+    document.title = "Passwortgenerator";
+  },
   computed: {
     isPasswordGenerated() {
       return this.password.length > 0;
