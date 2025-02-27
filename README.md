@@ -1,6 +1,6 @@
 # password_generator
 
-Generates password (Who would have thought it?)
+Generates passwords (Who would have thought it?)
 
 https://genpassrandom.vercel.app
 
