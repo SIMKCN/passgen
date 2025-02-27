@@ -277,7 +277,7 @@ export default {
         <h1 class="text-lg ml-16">Passwortgenerator</h1>
         <div class="grid grid-cols-2 grid-rows-1 w-72 mt-3">
           <base-label
-            class="justify-self-start w-60"
+            class="justify-self-start w-60 rounded-lg"
             :labelText="password[0]"
           ></base-label>
           <BaseButton
@@ -301,11 +301,12 @@ export default {
           <BaseButton
             buttonLabel="Generiere"
             @gotClicked="handleInput"
+            
             :class="
               generateButtonStatus ? 'cursor-pointer' : 'cursor-not-allowed'
             "
             icon-src="noIcon"
-            class="h-10"
+            class="h-10 animate-wiggle hover:animate-none"
           ></BaseButton>
           <AppPasswordStrength
             v-if="isPasswordGenerated"
