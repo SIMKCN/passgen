@@ -26,7 +26,6 @@ export default {
     password: {
       handler(password) {
         this.entropyCalculationProcess();
-        console.log(password, password.length, this.labelArray, charPool);
       },
     },
   },
@@ -57,7 +56,6 @@ export default {
       this.calculateEntropy();
       this.setSafetyLevel();
 
-      console.log(entropy, charPool);
       this.resetVariables();
     },
     resetVariables() {
