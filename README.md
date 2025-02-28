@@ -1,8 +1,8 @@
 # password_generator
 
-Tut was draufsteht.
+Generates passwords (Who would have thought it?)
 
-https://passwordgenerator-project.vercel.app/
+https://genpassrandom.vercel.app
 
 This template should help get you started developing with Vue 3 in Vite.
 
