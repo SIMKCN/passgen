@@ -6,7 +6,7 @@ import BaseMessage from "@/components/BaseMessage.vue";
 import AppPasswordStrength from "./components/AppPasswordStrength.vue";
 import AppCharacterSelector from "@/components/AppCharacterSelector.vue";
 import AppPasswordLengthInput from "@/components/AppPasswordLengthInput.vue";
-const UpperCaseLettersArray = [
+const upperCaseLetters = [
   "A",
   "B",
   "C",
@@ -34,7 +34,7 @@ const UpperCaseLettersArray = [
   "Y",
   "Z",
 ];
-const lowercaseLetters = [
+const lowerCaseLetters = [
   "a",
   "b",
   "c",
@@ -62,7 +62,7 @@ const lowercaseLetters = [
   "y",
   "z",
 ];
-const numbersArray = [
+const numbers = [
   "1",
   "2",
   "3",
@@ -84,7 +84,7 @@ const numbersArray = [
   "9",
   "0",
 ];
-const symbolsArray = [
+const symbols = [
   "!",
   "#",
   "$",
@@ -115,7 +115,7 @@ const symbolsArray = [
   "}",
   "~",
 ];
-const passphraseArray = [];
+const passphrase = [];
 
 export default {
   name: "app",
@@ -159,7 +159,6 @@ export default {
       this.resetVariables();
       this.addSelectedCharactersToPassphrase();
       this.shufflePassphrase();
-      this.shufflePassphrase();
       this.generatePasswordfromPassphrase();
     },
     resetVariables() {
@@ -170,10 +169,10 @@ export default {
     },
     addSelectedCharactersToPassphrase() {
       const charGroup = {
-        Großbuchstaben: UpperCaseLettersArray,
-        Kleinbuchstaben: lowercaseLetters,
-        Zahlen: numbersArray,
-        Symbole: symbolsArray,
+        Großbuchstaben: upperCaseLetters,
+        Kleinbuchstaben: lowerCaseLetters,
+        Zahlen: numbers,
+        Symbole: symbols,
       };
 
       this.labelArray.forEach((label) => {
@@ -183,14 +182,14 @@ export default {
       });
     },
     shufflePassphrase() {
-      var m = passphraseArray.length,
+      var m = passphrase.length,
         t,
         i;
       while (m) {
         i = Math.floor(Math.random() * m--);
-        t = passphraseArray[m];
-        passphraseArray[m] = passphraseArray[i];
-        passphraseArray[i] = t;
+        t = passphrase[m];
+        passphrase[m] = passphrase[i];
+        passphrase[i] = t;
       }
     },
     generatePasswordfromPassphrase() {
@@ -198,33 +197,35 @@ export default {
       var pre_password = "";
       while (n < this.passwordLength) {
         n++;
-        const randomIndex = Math.floor(Math.random() * passphraseArray.length);
-        const item = passphraseArray[randomIndex];
+        const randomIndex = Math.floor(Math.random() * passphrase.length);
+        const item = passphrase[randomIndex];
         pre_password += item;
       }
       this.password[0] = pre_password;
     },
 
+    // emit function for label array
     updateLabelAndEnableButton(array) {
       this.setLabelArray(array);
       this.flipGenerateButtonStatus(true);
-    },
+    }, 
     setLabelArray(array) {
       this.labelArray = array;
     },
     flipGenerateButtonStatus(Boolean) {
       this.generateButtonStatus = Boolean;
     },
+    // emit function for length
     updatePasswordLength(Number) {
       this.passwordLength = Number;
     },
 
     addCharsToPassphrase(value) {
-      passphraseArray.push(...value);
+      passphrase.push(...value);
     },
 
     deletePassphrase() {
-      passphraseArray.length = 0;
+      passphrase.length = 0;
     },
 
     handlePasswordCopying() {

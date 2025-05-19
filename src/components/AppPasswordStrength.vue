@@ -8,7 +8,9 @@
 <script>
 let charPool = 0;
 let entropy = 0;
-
+const ALPHABET_LENGTH = 26
+const SYMBOL_AMOUNT = 32
+const DIGITS = 10
 import BaseMessage from "./BaseMessage.vue";
 export default {
   name: "passwordStrength",
@@ -75,13 +77,13 @@ export default {
     updateCharacterPoolCount() {
       for (let i = 0; i < this.labelArray.length; i++) {
         if (this.labelArray[i] == "Großbuchstaben") {
-          charPool += 26;
+          charPool += ALPHABET_LENGTH;
         } else if (this.labelArray[i] == "Kleinbuchstaben") {
-          charPool += 26;
+          charPool += ALPHABET_LENGTH;
         } else if (this.labelArray[i] == "Symbole") {
-          charPool += 32;
+          charPool += SYMBOL_AMOUNT;
         } else if (this.labelArray[i] == "Zahlen") {
-          charPool += 10;
+          charPool += DIGITS;
         }
       }
     },

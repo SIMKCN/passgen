@@ -2,22 +2,22 @@
   <div
     class="grid grid-cols-1 mt-5 mb-5 rounded-lg w-72 bg-[#0077B6] text-[#CAF0F8] px-2 py-2"
   >
-    <base-switch-toggle
+    <BaseSwitchToggle
       label="Großbuchstaben"
       @got_checked="updateCheckboxArrayAndSendToApp($event)"
-    ></base-switch-toggle>
-    <base-switch-toggle
+    ></BaseSwitchToggle>
+    <BaseSwitchToggle
       label="Kleinbuchstaben"
       @got_checked="updateCheckboxArrayAndSendToApp($event)"
-    ></base-switch-toggle>
-    <base-switch-toggle
+    ></BaseSwitchToggle>
+    <BaseSwitchToggle
       label="Symbole"
       @got_checked="updateCheckboxArrayAndSendToApp($event)"
-    ></base-switch-toggle>
-    <base-switch-toggle
+    ></BaseSwitchToggle>
+    <BaseSwitchToggle
       label="Zahlen"
       @got_checked="updateCheckboxArrayAndSendToApp($event)"
-    ></base-switch-toggle>
+    ></BaseSwitchToggle>
   </div>
 </template>
 <script>
