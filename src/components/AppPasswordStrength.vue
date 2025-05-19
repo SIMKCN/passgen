@@ -65,7 +65,6 @@ export default {
 
     calculateEntropy() {
       entropy = this.password.length * Math.log2(charPool);
-      console.log(entropy)
     },
     setSafetyLevel() {
       this.safetyLevel = this.safetyValues.findIndex(
