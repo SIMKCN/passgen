@@ -35,7 +35,7 @@ export default {
     return {
       passwordStrength: "",
       safetyLevel: 0,
-      safetyValues: [
+      safetyValues: [ 
         { max: 40, label: "sehr unsicher", class: "text-[#ff0000]" },
         { max: 50, label: "akzeptabel", class: "text-[#ff6300]" },
         { max: 60, label: "fast sicher", class: "text-[#ff6300]" },
@@ -46,9 +46,8 @@ export default {
         { max: 200, label: "höchst sicher", class: "text-[#34C53E]" },
         { max: 220, label: "absolut sicher", class: "text-[#1AC883]" },
         { max: 500, label: "enorm sicher", class: "text-[#1AC883]" },
-        { max: 800, label: "maximal sicher", class: "text-[#04BEC5]" },
-        { max: 1700, label: "ultimativ sicher", class: "text-[#04BEC5]" },
-      ],
+        { max: 850, label: "maximal sicher", class: "text-[#04BEC5]" },
+      ], //max entropy is 838,98737
     };
   },
   methods: {
@@ -57,7 +56,6 @@ export default {
       this.updateCharacterPoolCount();
       this.calculateEntropy();
       this.setSafetyLevel();
-
       this.resetVariables();
     },
     resetVariables() {
@@ -67,6 +65,7 @@ export default {
 
     calculateEntropy() {
       entropy = this.password.length * Math.log2(charPool);
+      console.log(entropy)
     },
     setSafetyLevel() {
       this.safetyLevel = this.safetyValues.findIndex(
