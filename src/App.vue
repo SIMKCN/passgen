@@ -62,6 +62,7 @@ const lowerCaseLetters = [
   "y",
   "z",
 ];
+
 const numbers = [
   "1",
   "2",
@@ -156,12 +157,12 @@ export default {
       }
     },
     generatePassword() {
-      this.resetVariables();
+      this.resetPasswordVariables();
       this.addSelectedCharactersToPassphrase();
       this.shufflePassphrase();
       this.generatePasswordfromPassphrase();
     },
-    resetVariables() {
+    resetPasswordVariables() {
       this.deletePassphrase();
       this.password.length = 0;
       this.outputInformation("");
@@ -206,6 +207,7 @@ export default {
 
     // emit function for label array
     updateLabelAndEnableButton(array) {
+      this.resetOutput();
       this.setLabelArray(array);
       this.flipGenerateButtonStatus(true);
     }, 
@@ -251,7 +253,9 @@ export default {
       this.flipGenerateButtonStatus(false);
       this.deletePassphrase();
     },
-
+    resetOutput() {
+      this.outputInformation("")
+    },
     outputInformation(text, kind) {
       this.message = text;
       this.textColorMessage = kind;
