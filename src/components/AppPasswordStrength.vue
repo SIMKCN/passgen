@@ -33,7 +33,6 @@ export default {
   },
   data() {
     return {
-      passwordStrength: "",
       safetyLevel: 0,
       safetyValues: [ 
         { max: 40, label: "sehr unsicher", class: "text-[#ff0000]" },

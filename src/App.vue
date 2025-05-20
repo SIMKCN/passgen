@@ -140,9 +140,7 @@ export default {
     return {
       password: [],
       labelArray: [],
-      password_length: 0,
       message: "",
-      passwordGenerated: true,
       textColorMessage: "text-red-600",
       copyIcon: "/copy.png",
       generateButtonStatus: true,
